@@ -10,6 +10,7 @@ import industry from '@/components/industry'
 import customerCase from '@/components/customerCase'
 import about from '@/components/about'
 import download from '@/components/download'
+import details from '@/components/product_details'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
 			path: '/download',
 			name: 'download',
 			component: download
+			},
+			{
+				path: '/download/details',
+				name: 'details',
+				component: details
 			}]
 		}
   ]

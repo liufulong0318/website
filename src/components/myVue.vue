@@ -3,7 +3,7 @@
 		<div id="head">
 			<img src="../assets/logo_website.png"/>
 			<ul>
-				<li v-for="todo in todos" :key="todo.src">
+				<li v-for="todo in todos" :key="todo.src" :id="todo.id" v-on:click="selectCSS(todo.id)">
 					<router-link :to="todo.src">{{todo.text}}</router-link>
 				</li>
 			</ul>
@@ -19,31 +19,44 @@ import floot from "@/components/floot";
 	  data () {
 	    return {
 	      todos: [{
-					text:'首页',
-					src:'/home'
+						id:'home_1',
+						text:'首页',
+						src:'/home'
 					},{
-					text:'软件产品',
-					src:'/product'
+						id:'home_2',
+						text:'软件产品',
+						src:'/product'
 					},{
-					text:'行业领域',
-					src:'/industry'
+						id:'home_3',
+						text:'行业领域',
+						src:'/industry'
 					},{
-					text:'客户案例',
-					src:'/customerCase'
+						id:'home_4',
+						text:'客户案例',
+						src:'/customerCase'
 					},{
-					text:'关于庚顿',
-					src:'/about'
+						id:'home_5',
+						text:'关于庚顿',
+						src:'/about'
 					},{
-					text:'下载中心',
-					src:'/download'
+						id:'home_6',
+						text:'产品购买',
+						src:'/download'
 					}]
 	    }
 	  },
 	  methods: {
-	
+			selectCSS(id){
+// 				var lis = document.getElementById('head').getElementsByTagName("li");
+// 				for(var i =0;i<lis.length;i++){
+// 					console.log(lis[i].style.color)
+// 					lis[i].style.color = "#fff";
+// 				}
+				// document.getElementById(id).style.color="#00A9F6";
+			}
 	  },
 	  components:{
-		floot
+			floot
 	  }
 	}
 
@@ -59,6 +72,7 @@ import floot from "@/components/floot";
 	#myVue{
 		width: 100%;
 		height: 100%;
+		min-width: 1260px;
 	}
 	#head {
 		width: 100%;
@@ -89,9 +103,11 @@ import floot from "@/components/floot";
 		text-decoration: none;
 	}
 	a:hover {
-		color: red;
+		color: #00A9F6;
 	}
-	
+	.selectCSS{
+		color: #00A9F6;
+	}
 	floot{
 		width: 100%;
 		height: 50px;
