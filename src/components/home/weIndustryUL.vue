@@ -1,7 +1,7 @@
 <template>
 	<div id="weIndustryUL">
 		<div v-for="div_c in div_C" :key="div_c.name">
-			<img :src="div_c.src" v-on:mouseover="bg_change(div_c.new_src, div_c.src, div_c.name, div_c.id)" v-on:mouseleave="bg_return(div_c.new_src, div_c.src, div_c.name, div_c.id)" v-on:click="toPage(div_c.toPage)" :id="div_c.id" />
+			<img :src="div_c.src" v-on:click="toPage(div_c.toPage)" :id="div_c.id" :title="div_c.name"/>
 		</div>		
 	</div>
 </template>
@@ -86,7 +86,7 @@
 				},
 		methods: {
 			bg_change(new_src, src, name, id) {
-				document.getElementById(id).src=new_src; 
+				document.getElementById(id).src=new_src;
 			},
 			bg_return(new_src, src, name, id) {
 				document.getElementById(id).src=src;
@@ -143,24 +143,37 @@
 		position: relative;
 		top:-201px;
 		width: 15%;
+		height: 171px;
 		padding: 15px 1% 15px 0px;
 	}
 	#weIndustryUL div:nth-child(10){
 		position: relative;
 		top:-201px;
 		width: 15%;
+		height: 171px;
 		padding: 15px 1%;
 	}
 	#weIndustryUL div:nth-child(11){
 		position: relative;
 		top:-201px;
 		width: 15%;
+		height: 171px;
 		padding: 15px 1%;
 	}
 	#weIndustryUL div:nth-child(12) {
 		position: relative;
 		top:-201px;
 		width: 15%;
+		height: 171px;
 		padding: 15px 1%;
 	}
+	.img_bg{
+		z-index: 9;
+	}
+	/* .link_bg{
+		width: 100%;
+		height: 100%;
+		background: #666666;
+		z-index: 10;
+	} */
 </style>
